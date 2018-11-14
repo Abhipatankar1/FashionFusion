@@ -1,0 +1,8 @@
+.collar-wrap{
+    display: inline-flex;
+}
+
+.collar-toggle{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

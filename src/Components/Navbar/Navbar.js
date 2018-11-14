@@ -7,7 +7,9 @@ export default class Navbar extends Component {
 
   handleFabric = () => {
     // return 'fabrics';
-    return <Design display='fabrics' />
+    console.log('i am here')
+    return <Design props='fabrics' />
+    
   }
 
 
@@ -15,6 +17,7 @@ export default class Navbar extends Component {
     return (
       <div className='navbar_wrapper'>
         <p onClick={this.handleFabric}>Fabrics</p>
+        <p onClick={this.handleStyles}>Styles</p>
       </div>
     )
   }
