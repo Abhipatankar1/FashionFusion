@@ -1,0 +1,12 @@
+.collar_wrap{
+    position: absolute;
+    z-index: 2;
+    left: 371px;
+    top: 1010px;
+}
+
+.shirt_wrap{
+    position: absolute;
+    left: 237px;
+    z-index: 2;
+}
