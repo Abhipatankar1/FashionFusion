@@ -4,7 +4,7 @@ import './Clothes.css';
 
 const Clothes = (props) =>{
     return(
-        <div>
+        <div style={{outline: '2px solid', width: '100%'}}>
             <h1>design here</h1>
             <div className='collar_wrap'>{props.collarImg}</div>
 

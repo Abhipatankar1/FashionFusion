@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Design from './Design/Design';
 import Clothes from './Clothes/Clothes';
 import Collar1 from '../Components/Assets/collarRev.png';
-import Shirt1 from '../Components/Assets/shirtYesBtn.png'
+import Shirt1 from '../Components/Assets/shirtYesBtn.png';
+import Navbar from '../Components/Navbar/Navbar'
 
 
 class All extends Component {
@@ -22,8 +23,8 @@ class All extends Component {
   render() {
     return (
       <div>
-          <h1>navbar here</h1>
-          <div className='work'>
+          <Navbar />
+          <div style={{display: 'inline-flex', width: '100vw', height: '100vh'}}>
         <Design changeCollar={this.changeCollar} changeShirt={this.changeShirt}/>
         <Clothes collarImg={this.state.collarImg} shirtImg={this.state.shirtImg} />
 

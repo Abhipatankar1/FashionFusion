@@ -5,7 +5,7 @@ import All from '../src/Components/all'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div>
        <All/>
       </div>
     );
