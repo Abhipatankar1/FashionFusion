@@ -1,32 +1,98 @@
-.App {
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #2a2a2a;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+/* Half screen for Women and Men */
+.navbar-section {
+  flex: 1;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.women-section h2, .men-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-section p {
+  cursor: pointer;
+  margin: 10px 0;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar-section p:hover {
+  color: #ff4081;
+}
+
+/* Split the navbar into two equal parts */
+.women-section {
+  border-right: 2px solid #fff; /* Separate women and men sections visually */
+}
+
+.men-section {
+  border-left: 2px solid #fff; /* Add border between men and women sections */
+}
+
+
+.app-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.manq_wrap img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Draggable components styling */
+.dropped-component {
+  position: absolute;
+  cursor: move;
 }
+
+.collar-wrap img, .shirt-wrap img {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: grab;
+  transition: transform 0.2s;
+}
+
+.collar-wrap img:hover, .shirt-wrap img:hover {
+  transform: scale(1.1);
+}
+
+/* Mannequin Area */
+#manq-area {
+  position: relative;
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  border: 10px dashed #ccc;
+  padding: 10px;
+}
+
+.dropped-component {
+  position: absolute;
+  width: 100px;
+  top: 100px;
+  left: 100px;
+  transition: all 0.3s ease;
+}
+
