@@ -1,98 +1,83 @@
-/* Global Styles */
+/* Avatar.css */
+
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark background for the entire body */
+  color: #ffffff; /* White text color */
+}
+
+.container {
+  display: flex;
+  padding: 20px;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #2a2a2a;
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 100%;
+  width: 25%;
+  margin-right: 20px;
+  background-color: #1e1e1e; /* Darker background for the navbar */
+  border-radius: 10px; /* Rounded corners */
+  padding: 15px; /* Padding for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-/* Half screen for Women and Men */
-.navbar-section {
-  flex: 1;
-  text-align: center;
+.menu {
+  margin-top: 20px;
 }
 
-.women-section h2, .men-section h2 {
-  font-size: 1.5em;
+.menu h3 {
   margin-bottom: 10px;
+  border-bottom: 1px solid #444; /* Underline for section titles */
+  padding-bottom: 5px; /* Spacing below the title */
 }
 
-.navbar-section p {
+.menu select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px; /* Spacing between dropdowns */
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Rounded corners for dropdown */
   cursor: pointer;
-  margin: 10px 0;
-  color: #fff;
-  transition: color 0.3s;
+  font-size: 16px;
+  appearance: none; /* Remove default dropdown arrow */
+  background-image: url("data:image/svg+xml;base64,..."); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
 }
 
-.navbar-section p:hover {
-  color: #ff4081;
+.menu select:hover {
+  background-color: #45a049; /* Darker green on hover */
 }
 
-/* Split the navbar into two equal parts */
-.women-section {
-  border-right: 2px solid #fff; /* Separate women and men sections visually */
-}
-
-.men-section {
-  border-left: 2px solid #fff; /* Add border between men and women sections */
-}
-
-
-.app-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.manq_wrap img {
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
-
-/* Draggable components styling */
-.dropped-component {
-  position: absolute;
-  cursor: move;
-}
-
-.collar-wrap img, .shirt-wrap img {
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  cursor: grab;
-  transition: transform 0.2s;
-}
-
-.collar-wrap img:hover, .shirt-wrap img:hover {
-  transform: scale(1.1);
-}
-
-/* Mannequin Area */
-#manq-area {
-  position: relative;
-  width: 400px;
-  height: auto;
-  margin: 0 auto;
-  border: 10px dashed #ccc;
+.menu option {
+  background-color: #1e1e1e; /* Dark background for options */
+  color: white;
   padding: 10px;
 }
 
-.dropped-component {
-  position: absolute;
-  width: 100px;
-  top: 100px;
-  left: 100px;
-  transition: all 0.3s ease;
+/* Style for the avatar area where the outfit is placed */
+.avatar-area {
+  width: 70%;
+  height: 600px; /* Set a height for the avatar area */
+  position: relative; /* Needed for absolutely positioning items */
+  border: 2px solid #333; /* Border around the avatar area */
+  background-color: #222; /* Dark background color for the avatar area */
+  border-radius: 10px;
+  overflow: hidden; /* Ensure items don't overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
 }
 
+.draggable-item {
+  position: absolute; /* Allows dragging anywhere within the avatar area */
+}
+
+.collar img,
+.shirt img,
+.pants img {
+  max-width: 100px; /* Set a maximum width for images */
+  border-radius: 5px; /* Rounded corners for images */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for images */
+}
