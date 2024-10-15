@@ -4,8 +4,8 @@ import Collar1 from './Assets/collarRev.png';
 import Collar2 from './Assets/collarPlain.png';
 import Collar3 from './Assets/collarButton.png';
 import Collar4 from './Assets/collar_formal.png';
-import github  from './Assets/github.png';
-import linkedin from './Assets/linkedin.png'
+import github from './Assets/github.png';
+import linkedin from './Assets/linkedin.png';
 import './Avatar.css';
 
 const All = () => {
@@ -109,15 +109,15 @@ const All = () => {
 
   const renderDraggableImages = (items, type) => (
     items.map((item, index) => (
-      <div 
-        key={index} 
-        style={{ display: 'inline-block', margin: '5px', cursor: 'pointer' }} 
-        onClick={() => handleSelect(type, item)} 
+      <div
+        key={index}
+        style={{ display: 'inline-block', margin: '5px', cursor: 'pointer' }}
+        onClick={() => handleSelect(type, item)}
       >
-        <img 
-          src={item} 
-          alt={`${type} ${index + 1}`} 
-          style={{ width: '100px', height: 'auto' }} 
+        <img
+          src={item}
+          alt={`${type} ${index + 1}`}
+          style={{ width: '100px', height: 'auto' }}
         />
       </div>
     ))
@@ -135,7 +135,7 @@ const All = () => {
     };
 
     return (
-      <Draggable key={type}>
+      <Draggable key={type} bounds=".design-area">
         <div
           style={{ zIndex: 10 }}
           onClick={() => setSelectedItem(type)}
@@ -162,7 +162,7 @@ const All = () => {
     <div className="container">
       <div className="navbar">
         <h2>Select Components</h2>
-        
+
         <h3 onClick={toggleCollars} style={{ cursor: 'pointer' }}>Collars {showCollars ? '▼' : '▲'}</h3>
         {showCollars && (
           <div>
@@ -208,7 +208,7 @@ const All = () => {
         className="design-area"
         onDrop={handleDrop}
         onDragOver={handleDragOver}
-        style={{ width: '100%', height: '1500px', border: '1px solid black' }}
+        style={{ width: '100%', height: '1500px', border: '1px solid black', position: 'relative' }}
       >
         {Object.entries(selectedOutfit).map(([key, value]) => (
           renderDroppedImage(value, key)
@@ -222,27 +222,29 @@ const All = () => {
               {aspectRatioLocked ? 'Unlock Aspect Ratio' : 'Lock Aspect Ratio'}
             </button>
             <button onClick={resetSize}>Reset Size</button>
-            <button onClick={() => handleDeleteItem(selectedItem)}>Delete Item</button>
+            <button onClick={() => handleDeleteItem(selectedItem)}>Delete {selectedItem}</button>
           </div>
           <div>
-            <label>Width:</label>
-            <input
-              type="range"
-              min="100"
-              max="600"
-              value={selectedOutfit[selectedItem].width}
-              onChange={handleWidthChange}
-            />
-          </div>
-          <div>
-            <label>Height:</label>
-            <input
-              type="range"
-              min="100"
-              max="600"
-              value={selectedOutfit[selectedItem].height}
-              onChange={handleHeightChange}
-            />
+            <label>
+              Width:
+              <input
+                type="range"
+                min="100"
+                max="600"
+                value={selectedOutfit[selectedItem].width}
+                onChange={handleWidthChange}
+              />
+            </label>
+            <label>
+              Height:
+              <input
+                type="range"
+                min="100"
+                max="600"
+                value={selectedOutfit[selectedItem].height}
+                onChange={handleHeightChange}
+              />
+            </label>
           </div>
         </div>
       )}
@@ -267,12 +269,8 @@ const All = () => {
     </a>
   </div>
 </div>
-
-
-</div>
+    </div>
   );
 };
-
-
 
 export default All;
