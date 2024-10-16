@@ -10,14 +10,15 @@ body {
 /* Layout Container */
 .container {
   display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
   padding: 20px;
   position: relative;
 }
 
 /* Navigation Bar Styles */
 .navbar {
-  width: 25%;
-  margin-right: 20px;
+  width: 100%; /* Full width for mobile */
+  margin: 0 0 20px 0; /* Remove right margin on mobile */
   background-color: #1e1e1e;
   border-radius: 10px;
   padding: 20px;
@@ -58,11 +59,27 @@ body {
 }
 
 /* Draggable Image Styles */
+.design-area {
+  width: 100%;
+  height: 1500px; /* Consider making this responsive too */
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden; /* Ensure free movement inside design-area */
+}
+
 .draggable-image {
   display: inline-block;
   margin: 5px;
   cursor: pointer;
   transition: transform 0.2s ease, border 0.2s ease;
+  position: absolute; /* Allow free movement in design area */
+  z-index: 1;
+  top: 0; /* Starting position for draggable images */
+  left: 0; /* Starting position for draggable images */
+}
+
+.collar-component {
+  z-index: 2; /* Higher z-index for the collar to stay in front */
 }
 
 .draggable-image img {
@@ -77,16 +94,15 @@ body {
   border: 2px solid #f39c12;
 }
 
-/* Avatar Area Styles */
 .avatar-area {
-  position: relative;
-  width: 75%;
-  height: 500px;
+  position: relative; /* Keep this to ensure children are positioned relative to it */
+  width: 100%;
+  height: 1500px; /* Consider making this responsive too */
   border: 2px dashed #ffffff;
   border-radius: 10px;
   padding: 15px;
   background-color: #1c1c1c;
-  overflow: hidden;
+  overflow: hidden; /* Use overflow: visible if you want the draggable elements to extend beyond */
 }
 
 /* Resize Controls */
@@ -165,6 +181,7 @@ body {
 .hidden {
   display: none;
 }
+
 /* Developer Section Styles */
 .developer-section {
   position: fixed;
@@ -232,4 +249,34 @@ body {
 
 .social-icon:hover {
   transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Use horizontal layout on larger screens */
+  }
+
+  .navbar {
+    width: 25%; /* Fixed width for navbar on desktop */
+    margin-right: 20px; /* Add margin to separate from main content */
+  }
+
+  .design-area {
+    height: 800px; /* Adjust height as needed for larger screens */
+  }
+
+  .avatar-area {
+    height: 800px; /* Adjust height as needed for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .design-area {
+    height: 600px; /* Adjust height for mobile screens */
+  }
+
+  .avatar-area {
+    height: 600px; /* Adjust height for mobile screens */
+  }
 }
