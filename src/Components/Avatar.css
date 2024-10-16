@@ -225,6 +225,7 @@ body {
 .project-name {
   text-align: center; /* Center the project name */
   flex-grow: 1; /* Allow it to expand in the center */
+  padding-left: 10px; /* Optional: Adjust padding */
 }
 
 .project-name h3 {
@@ -232,7 +233,9 @@ body {
   font-size: 1.5rem; /* Font size for project name */
   margin: 0; /* Remove margin for a cleaner look */
   text-transform: uppercase; /* Make the project name uppercase */
+  margin-left: -10px; /* Optional: Adjust to move left */
 }
+
 
 /* Social Icons */
 .social-icons {
