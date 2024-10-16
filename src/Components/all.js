@@ -131,14 +131,15 @@ const All = () => {
       height: `${item.height}px`,
       cursor: 'move',
       position: 'absolute',
+      zIndex: type === 'collar' ? 20 : 10, // Ensuring collar appears above other clothing
       border: selectedItem === type ? '2px solid blue' : 'none',
     };
 
     return (
-      <Draggable key={type} bounds=".design-area">
+      <Draggable key={type}>
         <div
           style={{ zIndex: 10 }}
-          onClick={() => setSelectedItem(type)}
+          onClick={() => setSelectedItem(type)} // Select this item when clicked
         >
           <img src={item.image} alt={type} style={sizeStyle} />
         </div>
