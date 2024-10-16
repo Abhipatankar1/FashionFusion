@@ -10,15 +10,14 @@ body {
 /* Layout Container */
 .container {
   display: flex;
-  flex-direction: column; /* Stack vertically on small screens */
   padding: 20px;
   position: relative;
 }
 
 /* Navigation Bar Styles */
 .navbar {
-  width: 100%; /* Full width for mobile */
-  margin: 0 0 20px 0; /* Remove right margin on mobile */
+  width: 25%;
+  margin-right: 20px;
   background-color: #1e1e1e;
   border-radius: 10px;
   padding: 20px;
@@ -59,9 +58,10 @@ body {
 }
 
 /* Draggable Image Styles */
+
 .design-area {
   width: 100%;
-  height: 1500px; /* Consider making this responsive too */
+  height: 1500px;
   border: 1px solid black;
   position: relative;
   overflow: hidden; /* Ensure free movement inside design-area */
@@ -97,7 +97,7 @@ body {
 .avatar-area {
   position: relative; /* Keep this to ensure children are positioned relative to it */
   width: 100%;
-  height: 1500px; /* Consider making this responsive too */
+  height: 1500px;
   border: 2px dashed #ffffff;
   border-radius: 10px;
   padding: 15px;
@@ -112,6 +112,8 @@ body {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative; /* Ensure it positions correctly */
+  z-index: 10; /* Ensure it's on top of other elements */
 }
 
 .resize-controls h3 {
@@ -204,6 +206,7 @@ body {
 .contact-info {
   color: #cccccc; /* Lighter gray for contrast */
   text-align: left; /* Align text to the left */
+  flex-grow: 1; /* Allow it to expand */
 }
 
 .contact-info h3 {
@@ -251,32 +254,42 @@ body {
   transform: scale(1.1); /* Slight scale effect on hover */
 }
 
-/* Media Queries */
-@media (min-width: 768px) {
+/* Responsive Styles */
+@media (max-width: 767px) {
   .container {
-    flex-direction: row; /* Use horizontal layout on larger screens */
+    flex-direction: column; /* Stack navbar and design area */
+    padding: 10px; /* Reduced padding for mobile */
   }
 
   .navbar {
-    width: 25%; /* Fixed width for navbar on desktop */
-    margin-right: 20px; /* Add margin to separate from main content */
+    width: 100%; /* Full width for navbar on mobile */
+    margin-right: 0; /* Remove margin on mobile */
+    margin-bottom: 20px; /* Add space between navbar and design area */
+  }
+
+  .resize-controls {
+    width: 100%; /* Full width for resize controls on mobile */
+    padding: 15px; /* Adjust padding for mobile */
   }
 
   .design-area {
-    height: 800px; /* Adjust height as needed for larger screens */
+    height: 1000px; /* Adjust height for mobile */
   }
 
-  .avatar-area {
-    height: 800px; /* Adjust height as needed for larger screens */
-  }
-}
-
-@media (max-width: 767px) {
-  .design-area {
-    height: 600px; /* Adjust height for mobile screens */
+  .draggable-image img {
+    width: 80px; /* Smaller draggable images for mobile */
   }
 
-  .avatar-area {
-    height: 600px; /* Adjust height for mobile screens */
+  /* Developer Section on Mobile */
+  .developer-section {
+    flex-direction: column; /* Stack items vertically on mobile */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .contact-info,
+  .project-name,
+  .social-icons {
+    text-align: center; /* Center text for better appearance on mobile */
+    margin-bottom: 10px; /* Space between sections */
   }
 }
