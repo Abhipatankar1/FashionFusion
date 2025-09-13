@@ -253,8 +253,8 @@ const All = () => {
 <div className="developer-section">
   <div className="contact-info">
     <h3>Contact Us</h3>
-    <p>Phone: +91-8956889077</p>
-    <p>Email: harshshrivastav46@gmail.com</p>
+    <p>Phone: +91-9359259845</p>
+    <p>Email: patankarabhishek488@gmail.com</p>
   </div>
 
   <div className="project-name">
@@ -262,10 +262,10 @@ const All = () => {
   </div>
 
   <div className="social-icons">
-    <a href="https://github.com/harshshri11" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+    <a href="https://github.com/Abhipatankar1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
       <img src={github} alt="GitHub" className="social-icon" />
     </a>
-    <a href="https://linkedin.com/in/harsh-shrivastav-30614825b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    <a href="https://linkedin.com/in/abhishek-patankar-47936026a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
       <img src={linkedin} alt="LinkedIn" className="social-icon" />
     </a>
   </div>
